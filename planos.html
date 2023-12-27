@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <title>Superpets- Planos Page</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-dark fixed-top navbar-expand-md bg-tertiary" style="background-color: rgba(255, 255, 255, 0); box-shadow: none;">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 ms-4" href="index.html"><img src="Superpets-Logo.png" alt="Logo dos Superpets" width="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item me-4">
+                    <a class="nav-link active " aria-current="page" href="planos.html"><h2>Planos</h2></a>
+                </li>
+                <li class="nav-item me-4" >
+                    <a class="nav-link active" href="lojas.html"><h2>Lojas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="clinicas.html"><h2>Clinicas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="consultas.html"><h2>Consultas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="hoteis.html"><h2>Hoteis</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="serviços.html"><h2>Serviços Individuais</h2></a>
+                </li>
+            </ul> 
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                     <a class="nav-link active" href="login.html"><h5>Login</h5></a> 
+                </li> 
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                     <a class="nav-link active" href="profile.html"><h1><i class="fa fa-user-circle-o" aria-hidden="true"></i></h1></a> 
+                </li> 
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div class="container mt-4 mb-5 h1 text-light text-center rounded-5" style="background-color: #19254b; width: 500px ; height: 55px; font-weight: bolder;" >ESCOLHA O SEU PLANO</div>
+    <div class="container mt-4 mb-5" id="cards-gap">
+        <div class="row">
+            <div class="col-md-3">  
+                <div class="card text-center border-0  h-100">
+                    <a href="plano1.html"><img class="card-img-top rounded  " style="height: 250px;" id="imagem1" src="alimentacao.png" alt="alimentacao" /></a>
+                    <div class="card-body">
+                        <h3 class="card-title text-light mt-2 rounded-pill" style="background-color: #19254b; font-weight: bold; height: 37px;">Alimentação</h3>
+                        <h5 class="card-text mt-4 ">Com este Plano, tem disponivel todas as semanas um pacote de alimentacao personalizada para o seu melhor amigo de 4 patas</h5>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-md-3">
+                <div class="card text-center border-0 h-100">
+                    <a href="#"><img class="card-img-top rounded" style="height: 250px;" id="imagem1" src="nervoso.png" alt="nervoso" /></a>
+                    <div class="card-body">
+                        <h3 class="card-title text-light mt-2 rounded-pill" style="background-color: #19254b;font-weight: bold;height: 37px;">Nervoso</h3>
+                        <h5 class="card-text mt-4">O seu cão tem ansiadade ou apenas deseja ter umas férias relaxadas e sem preocupações? Então este é o plano para si</h5>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-3">
+                <div class="card text-center border-0 h-100 ">
+                    <a href="#"><img class="card-img-top rounded" style="height: 250px;" id="imagem1" src="newpet.png" alt="new pet" /></a>
+                    <div class="card-body">
+                        <h3 class="card-title text-light mt-2 rounded-pill" style="background-color:#d6af48;font-weight: bold;height: 37px;">New-Pet</h3>
+                        <h5 class="card-text mt-4">É a primeira vez que tem um animal de estimação e tem medo de não dar as melhores condições ao seu melhor amigo? Então este é o plano para si</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center border-0 h-100">
+                    <a href="#"><img class="card-img-top rounded" style="height: 250px;" id="imagem1" src="all in 1.png" alt="all in 1" /></a>
+                    <div class="card-body">
+                        <h3 class="card-title text-light mt-2 rounded-pill" style="background-color:#d6af48;font-weight: bold;height: 37px;">All in 1</h3>
+                        <h5 class="card-text mt-4">Com este incrivel Plano, tem disponivel todas os servicos disponiveis, pronto para dar as melhores condições ao seu animal de estimação</h5>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

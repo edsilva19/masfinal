@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <title>Superpets-Vet2</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark fixed-top navbar-expand-md bg-tertiary" style="background-color: rgba(255, 255, 255, 0); box-shadow: none;">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 ms-4" href="index.html"><img src="Superpets-Logo.png" alt="Logo dos Superpets" width="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item me-4">
+                    <a class="nav-link active " aria-current="page" href="planos.html"><h2>Planos</h2></a>
+                </li>
+                <li class="nav-item me-4" >
+                    <a class="nav-link active" href="lojas.html"><h2>Lojas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="clinicas.html"><h2>Clinicas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="consultas.html"><h2>Consultas</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="hoteis.html"><h2>Hoteis</h2></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="serviços.html"><h2>Serviços Individuais</h2></a>
+                </li>
+            </ul> 
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                     <a class="nav-link active" href="login.html"><h5>Login</h5></a> 
+                </li> 
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                     <a class="nav-link active" href="profile.html"><h1><i class="fa fa-user-circle-o" aria-hidden="true"></i></h1></a> 
+                </li> 
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-img"><img src="vet2.png" alt=""></div>
+            </div>
+            <div class="col ms-0">
+                <p><h3>Hospital de Braga</h3></p>
+                <p><h3>localização: Braga</h3></p>
+                <p><h3>Horário: 8:00-20:00, todos os dias</h3></p>
+                <p><h3>Especialidade: Cães e gatos</h3></p>
+            </div>
+        </div>
+        </br>
+        <!-- Formulário para agendar uma nova consulta -->
+        <h3>Agendar Nova Consulta</h3>
+        <form data-bind="submit: agendarConsulta">
+            <div class="form-group">
+                <label for="animal">Nome do Animal:</label>
+                <input type="text" class="form-control" id="animal" data-bind="value: animal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data da Consulta:</label>
+                <input type="date" class="form-control" id="data" data-bind="value: data" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Horário da Consulta:</label>
+                <input type="time" class="form-control" id="hora" data-bind="value: hora" required>
+            </div>
+            </br>
+            <button type="submit" class="btn btn-primary">Agendar Consulta</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // ViewModel com Knockout.js
+            function ConsultaViewModel() {
+                var self = this;
+    
+                self.animal = ko.observable("");
+                self.data = ko.observable("");
+                self.hora = ko.observable("");
+    
+                // Array para armazenar consultas agendadas
+                self.consultasAgendadas = ko.observableArray([]);
+    
+                // Função para agendar consulta
+                self.agendarConsulta = function () {
+                    var consultaInfo = "Hospital de Braga, animal: "+`${self.animal()}, ${self.data()}, ${self.hora()}`;
+                    self.consultasAgendadas.push(consultaInfo);
+    
+                    // Armazenar na localStorage
+                    localStorage.setItem('consultasAgendadas', JSON.stringify(self.consultasAgendadas()));
+    
+                    self.animal("");
+                    self.data("");
+                    self.hora("");
+                };
+            }
+    
+            // Inicialize o ViewModel
+            var viewModel = new ConsultaViewModel();
+            ko.applyBindings(viewModel, document.getElementById("consultaForm"));
+        });
+    </script>
+</body>
+</html>
